@@ -2,8 +2,8 @@
   <q-page>
     <p class="caption"> Encontre um CEP a partir de um logradouro </p>
 
-    <div class="row sm-gutter">
-      <div class="col">
+    <div class="row gutter-sm">
+      <div class="col-md-4">
         <q-select
           filter
           autofocus-filter
@@ -11,7 +11,7 @@
           stack-label="Selecione um estado"
           :options="statesSiglaOptions" />
       </div>
-      <div class="col">
+      <div class="col-md-4">
         <q-select
           filter
           autofocus-filter
@@ -19,7 +19,7 @@
           stack-label="Selecione um municipio"
           :options="cityOptions" />
       </div>
-      <div class="col">
+      <div class="col-md-4">
         <q-field>
           <q-input
             stack-label="Digite um logradouro"
@@ -40,8 +40,8 @@
 
     <br />
 
-    <div class="row sm-gutter">
-      <div class="col">
+    <div class="row gutter-sm">
+      <div class="col-md-6">
         <p class="caption"> Informações preenchidas </p>
 
         <div class="q-pa-sm">
@@ -49,7 +49,7 @@
         </div>
       </div>
 
-      <div class="col">
+      <div class="col-md-6">
         <p class="caption"> Resultado </p>
 
         <div class="q-pa-sm">
