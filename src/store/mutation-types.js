@@ -1,0 +1,2 @@
+export const SET_STATES = 'SET_STATES'
+export const SELECTED_STATE = 'SELECTED_STATE'
