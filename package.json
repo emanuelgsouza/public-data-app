@@ -10,7 +10,7 @@
     "lint": "eslint --ext .js,.vue src",
     "test": "echo \"No test specified\" && exit 0",
     "build": "quasar build",
-    "deploy": "yarn build ; npx push-dir --dir=dist/spa-mat --branch=gh-pages"
+    "deploy": "yarn build ; npx push-dir --dir=dist/spa-mat --branch=gh-pages --overwrite-local --verbose"
   },
   "dependencies": {
     "axios": "^0.18.0",
