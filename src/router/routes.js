@@ -2,26 +2,18 @@
 export default [
   {
     path: '/',
-    redirect: { name: 'cep.index' },
+    redirect: { name: 'cep.consult' },
     component: () => import('layouts/default'),
     children: [
-      { path: '', component: () => import('pages/index') },
       {
-        path: '/cep',
-        name: 'cep.index',
-        redirect: { name: 'cep.consult' },
-        children: [
-          {
-            path: '/cep/consult',
-            name: 'cep.consult',
-            component: () => import('pages/cep/consult')
-          },
-          {
-            path: '/cep/search',
-            name: 'cep.search',
-            component: () => import('pages/cep/search')
-          }
-        ]
+        path: '/cep/consult',
+        name: 'cep.consult',
+        component: () => import('pages/cep/consult')
+      },
+      {
+        path: '/cep/search',
+        name: 'cep.search',
+        component: () => import('pages/cep/search')
       }
     ]
   },

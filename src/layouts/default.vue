@@ -8,10 +8,8 @@
           <div slot="subtitle">Uma aplicação para consumo de dados públicos do IBGE</div>
         </q-toolbar-title>
       </q-toolbar>
-    </q-layout-header>
 
-    <q-page-container>
-      <q-tabs inverted align="justify">
+      <q-tabs align="justify">
         <q-route-tab
           default
           label="Consulta de CEP"
@@ -26,8 +24,12 @@
           slot="title"
         />
       </q-tabs>
+    </q-layout-header>
 
-      <router-view />
+    <q-page-container>
+      <div class="q-pa-sm">
+        <router-view />
+      </div>
     </q-page-container>
   </q-layout>
 </template>
