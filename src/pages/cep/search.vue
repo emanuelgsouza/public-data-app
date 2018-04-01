@@ -138,25 +138,27 @@ export default {
       setState: types.SELECTED_STATE
     }),
     getApiInformations () {
-      if (!this.isDisable) {
-        this.$q.loading.show()
-        const { logradouro, uf, city } = this
-        return cepApi
-          .get(`/${uf}/${city}/${logradouro}/json`)
-          .then(result => {
-            this.result = result.data || {}
-          })
-          .catch(err => {
-            console.error(err)
-            this.$q.notify({
-              type: 'negative',
-              message: err.message
-            })
-          })
-          .then(() => {
-            this.$q.loading.hide()
-          })
+      if (this.isDisable) {
+        return
       }
+
+      this.$q.loading.show()
+      const { logradouro, uf, city } = this
+      return cepApi
+        .get(`/${uf}/${city}/${logradouro}/json`)
+        .then(result => {
+          this.result = result.data || {}
+        })
+        .catch(err => {
+          console.error(err)
+          this.$q.notify({
+            type: 'negative',
+            message: err.message
+          })
+        })
+        .then(() => {
+          this.$q.loading.hide()
+        })
     }
   }
 }

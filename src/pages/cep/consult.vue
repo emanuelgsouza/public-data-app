@@ -48,14 +48,17 @@ export default {
     getApiInformations () {
       const cep = this.cep
       this.$q.loading.show()
-      if (this.isCepValid) {
-        return cepApi
-          .get(`/${cep}/json`)
-          .then(result => {
-            this.$q.loading.hide()
-            this.result = result.data || {}
-          })
+
+      if (!this.isCepValid) {
+        return
       }
+
+      cepApi
+        .get(`/${cep}/json`)
+        .then(result => {
+          this.$q.loading.hide()
+          this.result = result.data || {}
+        })
     }
   }
 }
